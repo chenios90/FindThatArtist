@@ -46,6 +46,7 @@ class SearchViewController: UIViewController {
                     }
                 guard let artistData = try? JSONDecoder().decode([Artist].self, from: data)else{
                     print("couldnt decode")
+                    print(error as Any)
                     return
                     
                 }
@@ -71,7 +72,8 @@ extension SearchViewController: UITableViewDataSource{
         cell.textLabel?.text = table.trackName
         cell.textLabel?.text = table.releaseDate
         cell.textLabel?.text = table.primaryGenreName
-        cell.textLabel?.text = table.trackPrice
+        let trackPrice:String = "\(table.trackPrice)"
+        cell.textLabel?.text = trackPrice
             print(indexPath)
             return cell
         

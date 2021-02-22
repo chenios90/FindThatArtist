@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import UIKit
 
 struct Artist: Decodable{
     let results: [ArtistDetails]
@@ -25,7 +24,7 @@ struct ArtistDetails: Decodable{
     let trackName: String
     let releaseDate: String
     let primaryGenreName: String
-    let trackPrice: String
+    let trackPrice: Double
     
     enum CodingKeys: String, CodingKey{
         case artistName
@@ -40,6 +39,6 @@ struct ArtistDetails: Decodable{
         self.trackName = try container.decode(String.self, forKey: .trackName)
         self.releaseDate = try container.decode(String.self, forKey: .releaseDate)
         self.primaryGenreName = try container.decode(String.self, forKey: .primaryGenreName)
-        self.trackPrice = try container.decode(String.self, forKey: .trackPrice)
+        self.trackPrice = try container.decode(Double.self, forKey: .trackPrice)
     }
 }
