@@ -24,17 +24,23 @@ class SearchViewController: UIViewController {
     
     @IBOutlet weak var artistTable: UITableView!
     
+    @IBOutlet weak var searchButton: UIButton!
+    
+    @IBOutlet weak var activitySpin: UIActivityIndicatorView!
+    
+    @IBOutlet weak var newSearchButton: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.artistTable.dataSource = self
         artistTable.isHidden = true
+        activitySpin.isHidden = true
+        newSearchButton.isHidden = true
 
     }
     
     func constructURL(artistName: String) -> String{
-        //https://itunes.apple.com/search?term=jack+johnson
         let api: String = "https://itunes.apple.com/"
         let endpoint: String = "search?term=\(artistName)"
         let url = (api + endpoint)
@@ -42,9 +48,20 @@ class SearchViewController: UIViewController {
         return url
     }
     
+    @IBAction func newSearch(_ sender: Any) {
+        newSearchButton.isHidden = true
+        searchButton.isHidden = false
+        searchArtist.isHidden = false
+        artistDetails.removeAll()
+        
+    }
     @IBAction func SearchArtist(_ sender: Any) {
      
-            getArtistData()
+        searchArtist.isHidden = true
+        searchButton.isHidden = true
+        activitySpin.isHidden = false
+        getArtistData()
+        showData()
         }
     
     func getArtistData(){
@@ -62,7 +79,6 @@ class SearchViewController: UIViewController {
         do {
         let artistData = try JSONDecoder().decode(Artist.self, from: data)
             self?.artistDetails.append(artistData)
-            print(self?.artistDetails)
         DispatchQueue.main.async {
         self?.artistTable.reloadData()
         }
@@ -72,6 +88,12 @@ class SearchViewController: UIViewController {
 
         }.resume()
         }
+    func showData(){
+        
+        activitySpin.isHidden = true
+        artistTable.isHidden = false
+        newSearchButton.isHidden = false
+    }
 }
 
 extension SearchViewController: UITableViewDataSource{
@@ -81,7 +103,6 @@ extension SearchViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ArtistTableViewCell
-       // let knownArtist = artistDetails
          let allNames = artistDetails.compactMap({$0.results[indexPath.row].artistName})
         let allTrackNames = artistDetails.compactMap({$0.results[indexPath.row].trackName})
         let allReleaseDates = artistDetails.compactMap({$0.results[indexPath.row].releaseDate})
@@ -90,15 +111,11 @@ extension SearchViewController: UITableViewDataSource{
         let stringOfAllTrackPrice = allTrackPrice.map{
             String($0)
         }
-        let artist: String = "Artist"
-    
-//        let table = self.artistDetails[0].results[0]
-        cell.artistNameLabel?.text = "artist name: " + allNames.joined()
-        cell.trackNameLabel?.text = allTrackNames.joined()
-        cell.relseaseDateLabel?.text = allReleaseDates.joined()
-        cell.primaryGenreLabel?.text = allPrimeGenres.joined()
-       // cell.trackPriceLabel?.text = "\(allTrackPrice)"
-        cell.trackPriceLabel.text = stringOfAllTrackPrice.joined()
+        cell.artistNameLabel?.text = "Artist: " + allNames.joined()
+        cell.trackNameLabel?.text = "Track: " + allTrackNames.joined()
+        cell.relseaseDateLabel?.text = "Release Date: " + allReleaseDates.joined()
+        cell.primaryGenreLabel?.text = "Genre: " + allPrimeGenres.joined()
+        cell.trackPriceLabel.text = "Track Price: " + stringOfAllTrackPrice.joined()
       
             return cell
         

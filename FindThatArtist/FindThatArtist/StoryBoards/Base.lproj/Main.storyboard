@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -24,13 +25,13 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3a-1R-F6Q">
                                 <rect key="frame" x="100" y="210" width="215" height="48"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                                <state key="normal" title="Search"/>
+                                <state key="normal" title="Search Artist"/>
                                 <connections>
                                     <action selector="SearchArtist:" destination="YlA-3W-lID" eventType="touchUpInside" id="1m1-RC-1UH"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="127" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RBX-dj-0a1">
-                                <rect key="frame" x="0.0" y="283" width="414" height="613"/>
+                                <rect key="frame" x="0.0" y="257" width="414" height="639"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -88,21 +89,42 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Puh-ZD-GDH">
+                                <rect key="frame" x="87" y="266" width="241" height="37"/>
+                                <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                                <color key="color" name="AccentColor"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LdO-Xf-as4">
+                                <rect key="frame" x="166" y="172" width="83" height="30"/>
+                                <state key="normal" title="New Search"/>
+                                <connections>
+                                    <action selector="newSearch:" destination="YlA-3W-lID" eventType="touchUpInside" id="Yl2-il-HaH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="k5r-PK-otl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="k5r-PK-otl" firstAttribute="trailing" secondItem="W3a-1R-F6Q" secondAttribute="trailing" constant="99" id="3BS-dv-BN5"/>
                             <constraint firstItem="wJV-yx-Q4g" firstAttribute="leading" secondItem="k5r-PK-otl" secondAttribute="leading" constant="100" id="E1f-j5-Vot"/>
+                            <constraint firstItem="k5r-PK-otl" firstAttribute="trailing" secondItem="Puh-ZD-GDH" secondAttribute="trailing" constant="86" id="HdM-Gj-QHA"/>
+                            <constraint firstItem="LdO-Xf-as4" firstAttribute="centerX" secondItem="W3a-1R-F6Q" secondAttribute="centerX" id="RDk-m7-z1e"/>
                             <constraint firstItem="wJV-yx-Q4g" firstAttribute="top" secondItem="k5r-PK-otl" secondAttribute="top" constant="50" id="RQ4-hX-sN1"/>
+                            <constraint firstItem="LdO-Xf-as4" firstAttribute="top" secondItem="wJV-yx-Q4g" secondAttribute="bottom" constant="44" id="S3o-4O-A0R"/>
+                            <constraint firstItem="Puh-ZD-GDH" firstAttribute="top" secondItem="k5r-PK-otl" secondAttribute="top" constant="222" id="Ujh-de-T26"/>
                             <constraint firstItem="W3a-1R-F6Q" firstAttribute="top" secondItem="wJV-yx-Q4g" secondAttribute="bottom" constant="82" id="XWq-gc-X4h"/>
                             <constraint firstItem="W3a-1R-F6Q" firstAttribute="leading" secondItem="k5r-PK-otl" secondAttribute="leading" constant="100" id="kda-os-0E2"/>
+                            <constraint firstItem="W3a-1R-F6Q" firstAttribute="top" secondItem="LdO-Xf-as4" secondAttribute="bottom" constant="8" symbolic="YES" id="khY-ay-SC3"/>
                             <constraint firstItem="k5r-PK-otl" firstAttribute="trailing" secondItem="wJV-yx-Q4g" secondAttribute="trailing" constant="99" id="u5O-gL-g6L"/>
+                            <constraint firstItem="Puh-ZD-GDH" firstAttribute="leading" secondItem="k5r-PK-otl" secondAttribute="leading" constant="87" id="xoZ-2W-reQ"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activitySpin" destination="Puh-ZD-GDH" id="qCI-K1-ZSy"/>
                         <outlet property="artistTable" destination="RBX-dj-0a1" id="mFo-oK-c8i"/>
+                        <outlet property="newSearchButton" destination="LdO-Xf-as4" id="9rd-9m-sUU"/>
                         <outlet property="searchArtist" destination="wJV-yx-Q4g" id="uv6-eM-Nxz"/>
+                        <outlet property="searchButton" destination="W3a-1R-F6Q" id="Xv9-bh-vfz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s7P-2Y-B15" sceneMemberID="firstResponder"/>
@@ -111,6 +133,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
