@@ -7,6 +7,16 @@
 
 import UIKit
 
+class ArtistTableViewCell: UITableViewCell{
+
+    @IBOutlet weak var artistNameLabel: UILabel!
+    @IBOutlet weak var trackNameLabel: UILabel!
+    @IBOutlet weak var relseaseDateLabel: UILabel!
+    @IBOutlet weak var trackPriceLabel: UILabel!
+    @IBOutlet weak var primaryGenreLabel: UILabel!
+    
+}
+
 class SearchViewController: UIViewController {
 
     var artistDetails : [Artist] = []
@@ -14,9 +24,12 @@ class SearchViewController: UIViewController {
     
     @IBOutlet weak var artistTable: UITableView!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.artistTable.dataSource = self
+        artistTable.isHidden = true
 
     }
     
@@ -67,16 +80,26 @@ extension SearchViewController: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ArtistTableViewCell
        // let knownArtist = artistDetails
          let allNames = artistDetails.compactMap({$0.results[indexPath.row].artistName})
+        let allTrackNames = artistDetails.compactMap({$0.results[indexPath.row].trackName})
+        let allReleaseDates = artistDetails.compactMap({$0.results[indexPath.row].releaseDate})
+        let allPrimeGenres = artistDetails.compactMap({$0.results[indexPath.row].primaryGenreName})
+        let allTrackPrice = artistDetails.compactMap({$0.results[indexPath.row].trackPrice})
+        let stringOfAllTrackPrice = allTrackPrice.map{
+            String($0)
+        }
+        let artist: String = "Artist"
+    
 //        let table = self.artistDetails[0].results[0]
-        cell.textLabel?.text = allNames.joined()
-        //        cell.textLabel?.text = table.trackName
-//        cell.textLabel?.text = table.releaseDate
-//        cell.textLabel?.text = table.primaryGenreName
-//        let trackPrice:String = "\(table.trackPrice)"
-//        cell.textLabel?.text = trackPrice
+        cell.artistNameLabel?.text = "artist name: " + allNames.joined()
+        cell.trackNameLabel?.text = allTrackNames.joined()
+        cell.relseaseDateLabel?.text = allReleaseDates.joined()
+        cell.primaryGenreLabel?.text = allPrimeGenres.joined()
+       // cell.trackPriceLabel?.text = "\(allTrackPrice)"
+        cell.trackPriceLabel.text = stringOfAllTrackPrice.joined()
+      
             return cell
         
     }

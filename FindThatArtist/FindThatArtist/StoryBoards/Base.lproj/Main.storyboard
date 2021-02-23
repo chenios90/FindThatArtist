@@ -29,12 +29,12 @@
                                     <action selector="SearchArtist:" destination="YlA-3W-lID" eventType="touchUpInside" id="1m1-RC-1UH"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RBX-dj-0a1">
-                                <rect key="frame" x="0.0" y="315" width="414" height="581"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="127" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RBX-dj-0a1">
+                                <rect key="frame" x="0.0" y="283" width="414" height="613"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="127" id="y2A-Jq-EAT">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="127" id="y2A-Jq-EAT" customClass="ArtistTableViewCell" customModule="FindThatArtist" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="127"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="y2A-Jq-EAT" id="OKN-6u-9fp">
@@ -78,6 +78,13 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="artistNameLabel" destination="85c-Dp-3Qt" id="5Mc-nx-iMR"/>
+                                            <outlet property="primaryGenreLabel" destination="xJN-ef-wew" id="Sp1-fW-n3c"/>
+                                            <outlet property="relseaseDateLabel" destination="3WE-Kg-QDz" id="XbE-pL-lqg"/>
+                                            <outlet property="trackNameLabel" destination="2F8-Ub-nTM" id="VaB-cZ-no3"/>
+                                            <outlet property="trackPriceLabel" destination="6aO-38-D8D" id="F6c-xf-37t"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
