@@ -40,41 +40,43 @@ class SearchViewController: UIViewController {
         
         let url = constructURL(artistName: theArtist)
         print(url)
-        URLSession.shared.dataTask(with: URL(string: url)!){
-                    [weak self](data, _, error) in guard let data = data else{
-                        return
-                    }
-                guard let artistData = try? JSONDecoder().decode([Artist].self, from: data)else{
-                    print("couldnt decode")
-                    print(error as Any)
-                    return
-                    
-                }
-                self?.artistDetails = artistData
-                DispatchQueue.main.async {
-                    self?.artistTable.reloadData()
-                }
-                }.resume()
-    }
-    
-    
+        URLSession.shared.dataTask(with: URL(string: url)!){ [weak self](data, _, error) in
+
+        guard let data = data else{
+        return
+        }
+
+        do {
+        let artistData = try JSONDecoder().decode(Artist.self, from: data)
+            self?.artistDetails.append(artistData)
+            print(self?.artistDetails)
+        DispatchQueue.main.async {
+        self?.artistTable.reloadData()
+        }
+        } catch {
+        print(error)
+        }
+
+        }.resume()
+        }
 }
 
 extension SearchViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return artistDetails.count
+        return 100
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        let table = self.artistDetails[0].results[0]
-        cell.textLabel?.text = table.artistName
-        cell.textLabel?.text = table.trackName
-        cell.textLabel?.text = table.releaseDate
-        cell.textLabel?.text = table.primaryGenreName
-        let trackPrice:String = "\(table.trackPrice)"
-        cell.textLabel?.text = trackPrice
-            print(indexPath)
+       // let knownArtist = artistDetails
+         let allNames = artistDetails.compactMap({$0.results[indexPath.row].artistName})
+//        let table = self.artistDetails[0].results[0]
+        cell.textLabel?.text = allNames.joined()
+        //        cell.textLabel?.text = table.trackName
+//        cell.textLabel?.text = table.releaseDate
+//        cell.textLabel?.text = table.primaryGenreName
+//        let trackPrice:String = "\(table.trackPrice)"
+//        cell.textLabel?.text = trackPrice
             return cell
         
     }

@@ -17,6 +17,7 @@
 		3A8C0F8025E1735D00851B77 /* FindThatArtistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8C0F7F25E1735D00851B77 /* FindThatArtistUITests.swift */; };
 		3A8C0F9225E1739500851B77 /* Artists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8C0F9125E1739500851B77 /* Artists.swift */; };
 		3A8C0F9B25E1743B00851B77 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8C0F9A25E1743B00851B77 /* SearchViewController.swift */; };
+		3AB4810525E447EA0004B288 /* TDDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB4810425E447EA0004B288 /* TDDTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		3A8C0F8125E1735D00851B77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A8C0F9125E1739500851B77 /* Artists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artists.swift; sourceTree = "<group>"; };
 		3A8C0F9A25E1743B00851B77 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		3AB4810425E447EA0004B288 /* TDDTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDDTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A03D95525E56AF8003597A8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3A8C0F6325E1735900851B77 /* FindThatArtist.xcdatamodeld */,
+				3A8C0F6625E1735C00851B77 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3A03D95625E56B0D003597A8 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				3A8C0F6025E1735900851B77 /* Main.storyboard */,
+			);
+			path = StoryBoards;
+			sourceTree = "<group>";
+		};
 		3A8C0F4E25E1735800851B77 = {
 			isa = PBXGroup;
 			children = (
@@ -103,15 +122,14 @@
 		3A8C0F5925E1735800851B77 /* FindThatArtist */ = {
 			isa = PBXGroup;
 			children = (
+				3A03D95625E56B0D003597A8 /* StoryBoards */,
+				3A03D95525E56AF8003597A8 /* Resources */,
 				3A8C0F9625E173F600851B77 /* Views */,
 				3A8C0F9025E1738700851B77 /* Model */,
 				3A8C0F5A25E1735800851B77 /* AppDelegate.swift */,
 				3A8C0F5C25E1735800851B77 /* SceneDelegate.swift */,
-				3A8C0F6025E1735900851B77 /* Main.storyboard */,
-				3A8C0F6625E1735C00851B77 /* Assets.xcassets */,
 				3A8C0F6825E1735C00851B77 /* LaunchScreen.storyboard */,
 				3A8C0F6B25E1735C00851B77 /* Info.plist */,
-				3A8C0F6325E1735900851B77 /* FindThatArtist.xcdatamodeld */,
 			);
 			path = FindThatArtist;
 			sourceTree = "<group>";
@@ -121,6 +139,7 @@
 			children = (
 				3A8C0F7425E1735D00851B77 /* FindThatArtistTests.swift */,
 				3A8C0F7625E1735D00851B77 /* Info.plist */,
+				3AB4810425E447EA0004B288 /* TDDTests.swift */,
 			);
 			path = FindThatArtistTests;
 			sourceTree = "<group>";
@@ -292,6 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AB4810525E447EA0004B288 /* TDDTests.swift in Sources */,
 				3A8C0F7525E1735D00851B77 /* FindThatArtistTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
