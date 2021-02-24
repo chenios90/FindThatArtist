@@ -17,6 +17,8 @@
 		3A8C0F8025E1735D00851B77 /* FindThatArtistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8C0F7F25E1735D00851B77 /* FindThatArtistUITests.swift */; };
 		3A8C0F9225E1739500851B77 /* Artists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8C0F9125E1739500851B77 /* Artists.swift */; };
 		3A8C0F9B25E1743B00851B77 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8C0F9A25E1743B00851B77 /* SearchViewController.swift */; };
+		3A9D2D5425E6021900115D0D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8C0F9A25E1743B00851B77 /* SearchViewController.swift */; };
+		3A9D2D5825E6021A00115D0D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8C0F9A25E1743B00851B77 /* SearchViewController.swift */; };
 		3AB4810525E447EA0004B288 /* TDDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB4810425E447EA0004B288 /* TDDTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -311,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A9D2D5425E6021900115D0D /* SearchViewController.swift in Sources */,
 				3AB4810525E447EA0004B288 /* TDDTests.swift in Sources */,
 				3A8C0F7525E1735D00851B77 /* FindThatArtistTests.swift in Sources */,
 			);
@@ -320,6 +323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A9D2D5825E6021A00115D0D /* SearchViewController.swift in Sources */,
 				3A8C0F8025E1735D00851B77 /* FindThatArtistUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

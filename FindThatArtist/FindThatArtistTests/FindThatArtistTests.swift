@@ -6,7 +6,6 @@
 //
 
 import XCTest
-@testable import FindThatArtist
 
 class FindThatArtistTests: XCTestCase {
 
