@@ -1,9 +1,3 @@
-//
-//  SearchViewController.swift
-//  FindThatArtist
-//
-//  Created by Field Employee on 2/20/21.
-//
 
 import UIKit
 
@@ -20,7 +14,7 @@ class SearchViewController: UIViewController {
 //    let network = GetArtistDataController()
     @IBOutlet weak var searchArtist: UITextField?
     
-    @IBOutlet weak var artistTable: UITableView!
+    @IBOutlet weak var artistTable: UITableView?
     
     @IBOutlet weak var searchButton: UIButton!
     
@@ -31,8 +25,8 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.artistTable.dataSource = self
-        artistTable.isHidden = true
+        self.artistTable?.dataSource = self
+        artistTable?.isHidden = true
         activitySpin.isHidden = true
         newSearchButton.isHidden = true
 
@@ -56,7 +50,6 @@ class SearchViewController: UIViewController {
         activitySpin.isHidden = false
         network.viewDidLoad()
         
-       self.dismiss(animated: true, completion: nil)
         network.getArtistData()
         showData()
         }
@@ -70,7 +63,7 @@ class SearchViewController: UIViewController {
     func showData(){
         
         activitySpin.isHidden = true
-        artistTable.isHidden = false
+        artistTable?.isHidden = false
         newSearchButton.isHidden = false
     }
 }

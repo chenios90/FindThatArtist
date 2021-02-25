@@ -1,25 +1,16 @@
-//
-//  GetArtistDataController.swift
-//  FindThatArtist
-//
-//  Created by Field Employee on 2/24/21.
-//
 
 import UIKit
 
 class GetArtistDataController: UIViewController {
 
-    let svc = SearchViewController()
     
     var artistDetails : [Artist] = []
     var artistNameArray: [String] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
+        let controller = SearchViewController()
             controller.delegate = self
         print("hungry hungry hippos")
-        present(controller, animated: true, completion: nil)
         print("artist array")
         print(artistNameArray)
         print(controller.passDelegate())
@@ -49,10 +40,11 @@ class GetArtistDataController: UIViewController {
         }
 
         do {
+            
         let artistData = try JSONDecoder().decode(Artist.self, from: data)
             self?.artistDetails.append(artistData)
         DispatchQueue.main.async {
-            self?.svc.artistTable.reloadData()
+            SearchViewController().artistTable?.reloadData()
         }
         } catch {
         print(error)

@@ -1,9 +1,3 @@
-//
-//  ArtistTableViewCell.swift
-//  FindThatArtist
-//
-//  Created by Field Employee on 2/24/21.
-//
 
 import UIKit
 
