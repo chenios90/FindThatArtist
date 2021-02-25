@@ -12,7 +12,7 @@
         <!--Search View Controller-->
         <scene sceneID="Qtf-gy-1S2">
             <objects>
-                <viewController id="YlA-3W-lID" customClass="SearchViewController" customModule="FindThatArtist" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YlA-3W-lID" customClass="SearchViewController" customModule="FindThatArtist" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="E3t-Pq-lF3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

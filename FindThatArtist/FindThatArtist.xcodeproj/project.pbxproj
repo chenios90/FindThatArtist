@@ -17,6 +17,8 @@
 		3A8C0F8025E1735D00851B77 /* FindThatArtistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8C0F7F25E1735D00851B77 /* FindThatArtistUITests.swift */; };
 		3A8C0F9225E1739500851B77 /* Artists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8C0F9125E1739500851B77 /* Artists.swift */; };
 		3A8C0F9B25E1743B00851B77 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8C0F9A25E1743B00851B77 /* SearchViewController.swift */; };
+		3A8FC80225E6F17400C1789C /* ArtistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8FC80125E6F17400C1789C /* ArtistTableViewCell.swift */; };
+		3A8FC82325E73D9200C1789C /* GetArtistDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8FC82225E73D9200C1789C /* GetArtistDataController.swift */; };
 		3A9D2D5425E6021900115D0D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8C0F9A25E1743B00851B77 /* SearchViewController.swift */; };
 		3A9D2D5825E6021A00115D0D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8C0F9A25E1743B00851B77 /* SearchViewController.swift */; };
 		3AB4810525E447EA0004B288 /* TDDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB4810425E447EA0004B288 /* TDDTests.swift */; };
@@ -56,6 +58,8 @@
 		3A8C0F8125E1735D00851B77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A8C0F9125E1739500851B77 /* Artists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artists.swift; sourceTree = "<group>"; };
 		3A8C0F9A25E1743B00851B77 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		3A8FC80125E6F17400C1789C /* ArtistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistTableViewCell.swift; sourceTree = "<group>"; };
+		3A8FC82225E73D9200C1789C /* GetArtistDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetArtistDataController.swift; sourceTree = "<group>"; };
 		3AB4810425E447EA0004B288 /* TDDTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDDTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,6 +128,8 @@
 		3A8C0F5925E1735800851B77 /* FindThatArtist */ = {
 			isa = PBXGroup;
 			children = (
+				3A8FC80925E6FA1200C1789C /* Networking */,
+				3A8FC80025E6F16000C1789C /* Controllers */,
 				3A03D95625E56B0D003597A8 /* StoryBoards */,
 				3A03D95525E56AF8003597A8 /* Resources */,
 				3A8C0F9625E173F600851B77 /* Views */,
@@ -169,6 +175,22 @@
 				3A8C0F9A25E1743B00851B77 /* SearchViewController.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		3A8FC80025E6F16000C1789C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3A8FC80125E6F17400C1789C /* ArtistTableViewCell.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3A8FC80925E6FA1200C1789C /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				3A8FC82225E73D9200C1789C /* GetArtistDataController.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,7 +326,9 @@
 				3A8C0F9B25E1743B00851B77 /* SearchViewController.swift in Sources */,
 				3A8C0F6525E1735900851B77 /* FindThatArtist.xcdatamodeld in Sources */,
 				3A8C0F9225E1739500851B77 /* Artists.swift in Sources */,
+				3A8FC82325E73D9200C1789C /* GetArtistDataController.swift in Sources */,
 				3A8C0F5B25E1735800851B77 /* AppDelegate.swift in Sources */,
+				3A8FC80225E6F17400C1789C /* ArtistTableViewCell.swift in Sources */,
 				3A8C0F5D25E1735800851B77 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
